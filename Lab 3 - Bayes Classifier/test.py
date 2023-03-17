@@ -6,4 +6,5 @@ x= np.array([
 ])
 
 y =x[x[:,0]==1]
+y=np.mean(x,axis=0)
 print(y)
