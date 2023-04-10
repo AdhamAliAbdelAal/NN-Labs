@@ -1,10 +1,22 @@
 import numpy as np
 
 x=np.array([
-    [1,2,3],
-    [4,5,6],
-           ])
-print(np.mean(x,axis=0))
+    [1,2],
+    [3,4],
+    [5,6],
+        ])
+u=np.array([
+    [10,20],
+    [30,40],
+])
+def projectData(X, U, K):
+    U= U[:K,:]
+    Z = U[np.newaxis,:,:]@X[:,:,np.newaxis]
+    return Z.reshape(-1,1)
+
+
+print(projectData(x,u,1))
+print(np.flip(x,axis=1))
 
 # print(np.cov(x,rowvar=False))
 
